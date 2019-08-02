@@ -31,7 +31,7 @@ function activate(context) {
         const insertEnclosingClass = config.insertEnclosingClass;
         const insertEnclosingFunction = config.insertEnclosingFunction;
         const logFunction = config.logFunction;
-        const logType = 'info';
+        const logType = logFunction === 'console' ? 'log' : 'info';
         editBuilder.insert(
           new vscode.Position(logMessageLine >= document.lineCount ? document.lineCount : logMessageLine, 0),
           logMessage.message(
