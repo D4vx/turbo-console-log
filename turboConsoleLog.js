@@ -31,7 +31,7 @@ function activate(context) {
         const insertEnclosingClass = config.insertEnclosingClass;
         const insertEnclosingFunction = config.insertEnclosingFunction;
         const logFunction = config.logFunction;
-        const logType = logFunction === 'console' ? 'log' : 'info';
+        const logType = 'info';
         editBuilder.insert(
           new vscode.Position(logMessageLine >= document.lineCount ? document.lineCount : logMessageLine, 0),
           logMessage.message(
@@ -122,6 +122,51 @@ function activate(context) {
         const insertEnclosingFunction = config.insertEnclosingFunction;
         const logFunction = config.logFunction;
         const logType = 'error';
+        editBuilder.insert(
+          new vscode.Position(logMessageLine >= document.lineCount ? document.lineCount : logMessageLine, 0),
+          logMessage.message(
+            document,
+            selectedVar,
+            lineOfSelectedVar,
+            wrapLogMessage,
+            logMessagePrefix,
+            quote,
+            addSemicolonInTheEnd,
+            insertEnclosingClass,
+            insertEnclosingFunction,
+            tabSize,
+            logFunction,
+            logType,
+          )
+        );
+      });
+    }
+  });
+  vscode.commands.registerCommand("turboConsoleLog.displayWarnLogMessage", () => {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) {
+      return;
+    }
+    const tabSize = editor.options.tabSize;
+    const document = editor.document;
+    const selection = editor.selection;
+    const selectedVar = document.getText(selection);
+    const lineOfSelectedVar = selection.active.line;
+    // Check if the selection line is not the last one in the document and the selected variable is not empty
+    if (
+      selectedVar.trim().length !== 0
+    ) {
+      editor.edit(editBuilder => {
+        const config = vscode.workspace.getConfiguration("turboConsoleLog");
+        const wrapLogMessage = config.wrapLogMessage || false;
+        const logMessagePrefix = config.logMessagePrefix;
+        const quote = config.quote;
+        const addSemicolonInTheEnd = config.addSemicolonInTheEnd || false;
+        const logMessageLine = logMessage.logMessageLine(document, lineOfSelectedVar, selectedVar);
+        const insertEnclosingClass = config.insertEnclosingClass;
+        const insertEnclosingFunction = config.insertEnclosingFunction;
+        const logFunction = config.logFunction;
+        const logType = 'warn';
         editBuilder.insert(
           new vscode.Position(logMessageLine >= document.lineCount ? document.lineCount : logMessageLine, 0),
           logMessage.message(

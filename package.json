@@ -15,6 +15,7 @@
     "onCommand:turboConsoleLog.displayLogMessage",
     "onCommand:turboConsoleLog.displayDebugLogMessage",
     "onCommand:turboConsoleLog.displayErrorLogMessage",
+    "onCommand:turboConsoleLog.displayWarnLogMessage",
     "onCommand:turboConsoleLog.commentAllLogMessages",
     "onCommand:turboConsoleLog.uncommentAllLogMessages",
     "onCommand:turboConsoleLog.deleteAllLogMessages"
@@ -62,7 +63,7 @@
         },
         "turboConsoleLog.logFunction": {
           "type": "string",
-          "default": "console.log",
+          "default": "console",
           "description": "The function to call when inserting a log message."
         }
       }
@@ -79,6 +80,10 @@
       {
         "command": "turboConsoleLog.displayErrorLogMessage",
         "title": "Turbo Console Log: Display Error Log Message"
+      },
+      {
+        "command": "turboConsoleLog.displayWarnLogMessage",
+        "title": "Turbo Console Log: Display Warn Log Message"
       },
       {
         "command": "turboConsoleLog.commentAllLogMessages",
@@ -108,6 +113,11 @@
         "command": "turboConsoleLog.displayErrorLogMessage",
         "key": "ctrl+alt+e",
         "mac": "ctrl+alt+e"
+      },
+      {
+        "command": "turboConsoleLog.displayWarnLogMessage",
+        "key": "ctrl+alt+w",
+        "mac": "ctrl+alt+w"
       },
       {
         "command": "turboConsoleLog.commentAllLogMessages",
