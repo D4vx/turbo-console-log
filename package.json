@@ -1,6 +1,6 @@
 {
-  "name": "daves-turbo-console-log",
-  "displayName": "Daves Turbo Console Log",
+  "name": "turbo-console-log",
+  "displayName": "Turbo Console Log (Custom)",
   "description": "Automating the process of writing meaningful log messages.",
   "version": "1.2.25",
   "publisher": "ChakrounAnas",
