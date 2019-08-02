@@ -1,6 +1,6 @@
 {
-  "name": "turbo-console-log",
-  "displayName": "Turbo Console Log",
+  "name": "daves-turbo-console-log",
+  "displayName": "Daves Turbo Console Log",
   "description": "Automating the process of writing meaningful log messages.",
   "version": "1.2.25",
   "publisher": "ChakrounAnas",
@@ -13,6 +13,8 @@
   "icon": "images/icon.png",
   "activationEvents": [
     "onCommand:turboConsoleLog.displayLogMessage",
+    "onCommand:turboConsoleLog.displayDebugLogMessage",
+    "onCommand:turboConsoleLog.displayErrorLogMessage",
     "onCommand:turboConsoleLog.commentAllLogMessages",
     "onCommand:turboConsoleLog.uncommentAllLogMessages",
     "onCommand:turboConsoleLog.deleteAllLogMessages"
@@ -69,6 +71,14 @@
       {
         "command": "turboConsoleLog.displayLogMessage",
         "title": "Turbo Console Log: Display Log Message"
+      },
+      {
+        "command": "turboConsoleLog.displayDebugLogMessage",
+        "title": "Turbo Console Log: Display Debug Log Message"
+      },
+      {
+        "command": "turboConsoleLog.displayErrorLogMessage",
+        "title": "Turbo Console Log: Display Error Log Message"
       },
       {
         "command": "turboConsoleLog.commentAllLogMessages",
@@ -144,6 +154,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Chakroun-Anas/turbo-console-log"
+    "url": "https://github.com/D4vx/turbo-console-log"
   }
 }
