@@ -57,6 +57,11 @@
           ],
           "default": "\"",
           "description": "Double quotes, single quotes or backtick"
+        },
+        "turboConsoleLog.logFunction": {
+          "type": "string",
+          "default": "console.log",
+          "description": "The function to call when inserting a log message."
         }
       }
     },
@@ -83,6 +88,16 @@
         "command": "turboConsoleLog.displayLogMessage",
         "key": "ctrl+alt+l",
         "mac": "ctrl+alt+l"
+      },
+      {
+        "command": "turboConsoleLog.displayDebugLogMessage",
+        "key": "ctrl+alt+d",
+        "mac": "ctrl+alt+d"
+      },
+      {
+        "command": "turboConsoleLog.displayErrorLogMessage",
+        "key": "ctrl+alt+e",
+        "mac": "ctrl+alt+e"
       },
       {
         "command": "turboConsoleLog.commentAllLogMessages",
